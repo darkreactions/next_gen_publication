@@ -230,10 +230,9 @@ class Figure1:
     def init_thermal_plot(self):
         import plotly.graph_objs as go
 
-        base_url = list(notebookapp.list_running_servers())[0]['base_url']
-        data_url = base_url + 'files/sd2e-community/perovskite-data/data_connected_pub'
-        full_url = 'https://jupyter.sd2e.org{}/images/not_found.png'.format(
-            data_url)
+        #base_url = list(notebookapp.list_running_servers())[0]['base_url']
+        #data_url = base_url + 'files/sd2e-community/perovskite-data/data_connected_pub'
+        full_url = 'images/not_found.png'
         layout = go.Layout(
             hovermode='closest',
             xaxis=dict(
@@ -351,7 +350,7 @@ class Figure1:
         if self.selected_plate:
             js_string = """
                         var base_uri = utils.get_body_data("baseUrl");
-                        var file_location = utils.encode_uri_components('sd2e-community/perovskite-data/data_connected_pub/files/{}_RobotInput.xls');
+                        var file_location = utils.encode_uri_components('{}_RobotInput.xls');
                         var final_url = utils.url_path_join(base_uri, 'files', file_location) + '?download=1'
                         console.log(final_url)
                         window.open(final_url, IPython._target);
@@ -363,7 +362,7 @@ class Figure1:
         if self.selected_plate:
             js_string = """
                         var base_uri = utils.get_body_data("baseUrl");
-                        var file_location = utils.encode_uri_components('sd2e-community/perovskite-data/data_connected_pub/files/{}_ExpDataEntry.xls');
+                        var file_location = utils.encode_uri_components('{}_ExpDataEntry.xls');
                         var final_url = utils.url_path_join(base_uri, 'files', file_location) + '?download=1'
                         console.log(final_url)
                         window.open(final_url, IPython._target);
@@ -381,11 +380,10 @@ class Figure1:
         if new_plate != self.old_plate:
             self.old_plate = new_plate
             with self.thermal_plot.batch_update():
-                base_url = list(notebookapp.list_running_servers())[
-                    0]['base_url']
-                data_url = base_url + 'files/sd2e-community/perovskite-data/data_connected_pub'
-                full_url = 'https://jupyter.sd2e.org{}/images/{}_thermal.PNG'.format(
-                    data_url, new_plate)
+                # base_url = list(notebookapp.list_running_servers())[
+                #    0]['base_url']
+                #data_url = base_url + 'files/sd2e-community/perovskite-data/data_connected_pub'
+                full_url = 'images/{}_thermal.PNG'.format(new_plate)
                 self.thermal_plot.layout.images = [go.layout.Image(
                     source=full_url,
                     xref="x",
