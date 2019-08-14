@@ -351,7 +351,8 @@ class Figure1:
             js_string = """
                         var base_uri = utils.get_body_data("baseUrl");
                         var file_location = utils.encode_uri_components('{}_RobotInput.xls');
-                        var final_url = utils.url_path_join(base_uri, 'files', file_location) + '?download=1'
+                        // var final_url = utils.url_path_join(base_uri, 'files', file_location)
+                        var final_url = 'files/' + file_location
                         console.log(final_url)
                         window.open(final_url, IPython._target);
                         """.format(self.selected_plate)
@@ -362,8 +363,9 @@ class Figure1:
         if self.selected_plate:
             js_string = """
                         var base_uri = utils.get_body_data("baseUrl");
-                        var file_location = utils.encode_uri_components('{}_ExpDataEntry.xls');
-                        var final_url = utils.url_path_join(base_uri, 'files', file_location) + '?download=1'
+                        var file_location = utils.encode_uri_components('{}_ExpDataEntry.xlsx');
+                        // var final_url = utils.url_path_join(base_uri, 'files', file_location)
+                        var final_url = 'files/' + file_location
                         console.log(final_url)
                         window.open(final_url, IPython._target);
                         """.format(self.selected_plate)
