@@ -1,0 +1,148 @@
+
+#######################################################################
+#
+#                 Cambridge Crystallographic Data Centre
+#                                CCDC
+#
+#######################################################################
+#
+# If this CIF has been generated from an entry in the Cambridge
+# Structural Database, then it will include bibliographic, chemical,
+# crystal, experimental, refinement or atomic coordinate data resulting
+# from the CCDC's data processing and validation procedures.
+#
+#######################################################################
+
+data_CSD_CIF_HUTVAV01
+_audit_creation_date 2016-05-19
+_audit_creation_method CSD-ConQuest-V1
+_database_code_CSD HUTVAV01
+_database_code_depnum_ccdc_archive 'CCDC 1408123'
+_chemical_formula_sum 'C2 H8 I3 N1 Pb1'
+_chemical_formula_moiety
+;
+C2 H8 N1 1+,(I3 Pb1 1-)n
+;
+_journal_coden_Cambridge 208
+_journal_volume 240
+_journal_year 2016
+_journal_page_first 55
+_journal_name_full 'J.Solid State Chem. '
+loop_
+_publ_author_name
+"A.Mancini"
+"P.Quadrelli"
+"G.Amoroso"
+"C.Milanese"
+"M.Boiocchi"
+"Angelo Sironi"
+"M.Patrini"
+"G.Guizzetti"
+"L.Malavasi"
+_chemical_name_systematic
+;
+catena-[dimethylammonium tris(\m-iodo)-lead(ii)]
+;
+_cell_volume    545.344
+_exptl_crystal_colour 'pale yellow'
+_exptl_crystal_density_diffrn 3.861
+_exptl_special_details
+;
+Photovoltaics
+P63/mmc polymorph
+Air-sensitive, Hygroscopic
+
+;
+_exptl_crystal_description 'PRISM'
+_diffrn_ambient_temperature 293
+_refine_special_details
+;
+N1 disordered by symmetry over three configurations with occupancy 0.3333.
+
+;
+#These two values have been output from a single CSD field.
+_refine_ls_R_factor_gt 0.0326
+_refine_ls_wR_factor_gt 0.0326
+_symmetry_cell_setting hexagonal
+_symmetry_space_group_name_H-M 'P 63/m m c'
+_symmetry_Int_Tables_number 194
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 x,y,z
+2 -x,-y,1/2+z
+3 -y,-x,1/2-z
+4 y,x,-z
+5 x-y,-y,-z
+6 -x+y,y,1/2-z
+7 x,x-y,1/2-z
+8 -x,-x+y,-z
+9 -y,x-y,z
+10 y,-x+y,1/2+z
+11 x-y,x,1/2+z
+12 -x+y,-x,z
+13 -x,-y,-z
+14 x,y,-1/2-z
+15 y,x,-1/2+z
+16 -y,-x,z
+17 -x+y,y,z
+18 x-y,-y,-1/2+z
+19 -x,-x+y,-1/2+z
+20 x,x-y,z
+21 y,-x+y,-z
+22 -y,x-y,-1/2-z
+23 -x+y,-x,-1/2-z
+24 x-y,x,-z
+_cell_length_a 8.7693(15)
+_cell_length_b 8.7693(15)
+_cell_length_c 8.1886(18)
+_cell_angle_alpha 90
+_cell_angle_beta 90
+_cell_angle_gamma 120
+_cell_formula_units_Z 2
+loop_
+_atom_type_symbol
+_atom_type_radius_bond
+C 0.68
+H 0.23
+I 1.40
+N 0.68
+Pb 1.46
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+Pb1 Pb 0.00000 0.00000 0.00000
+I1 I -0.16433(7) 0.16433(7) 0.25000
+N1 N 0.223(2) 0.6116(12) 0.25000
+H1 H 0.15440 0.65880 0.25000
+C1 C 0.33330 0.66670 0.1035(6)
+H2 H 0.26000 0.63000 0.00780
+H3 H 0.39500 0.79000 0.09780
+I1E I 0.32866(7) 0.16433(7) 0.25000
+I1F I -0.16433(7) -0.32866(7) 0.25000
+Pb1A Pb 0.00000 0.00000 0.50000
+I1A I 0.16433(7) -0.16433(7) -0.25000
+I1D I -0.32866(7) -0.16433(7) -0.25000
+I1G I 0.16433(7) 0.32866(7) -0.25000
+N1B N 0.3884(20) 0.7770(12) 0.25000
+H1B H 0.34120 0.84560 0.25000
+C1B C 0.33330 0.66670 0.3965(6)
+H2B H 0.37000 0.74000 0.49220
+H3B H 0.21000 0.60500 0.40220
+N1E N 0.3886(20) 0.6116(12) 0.25000
+H1E H 0.50440 0.65880 0.25000
+H2E H 0.37000 0.63000 0.49220
+H3E H 0.39500 0.79000 0.40220
+H1F H 0.15440 0.49560 0.25000
+H2F H 0.26000 0.63000 0.49220
+H3F H 0.39500 0.60500 0.40220
+H1H H 0.34120 0.49560 0.25000
+H2H H 0.37000 0.63000 0.00780
+H3H H 0.21000 0.60500 0.09780
+H1K H 0.50440 0.84560 0.25000
+H2K H 0.37000 0.74000 0.00780
+H3K H 0.39500 0.60500 0.09780
+#END

@@ -1,0 +1,71 @@
+
+data_MAN_112_2_2_b_0m
+
+loop_
+ _atom_type_symbol
+ _atom_type_description
+ _atom_type_scat_dispersion_real
+ _atom_type_scat_dispersion_imag
+ _atom_type_scat_source
+ 'C'  'C'   0.0033   0.0016
+ 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+ 'H'  'H'   0.0000   0.0000
+ 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+ 'N'  'N'   0.0061   0.0033
+ 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+ 'I'  'I'  -0.4742   1.8119
+ 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+ 'Pb'  'Pb'  -3.3944  10.1111
+ 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+ 
+_space_group_crystal_system       trigonal
+_space_group_IT_number            163
+_space_group_name_H-M_alt         'P -3 1 c'
+_space_group_name_Hall            '-P 3 2c'
+
+loop_
+ _space_group_symop_operation_xyz
+ 'x, y, z'
+ '-y, x-y, z'
+ '-x+y, -x, z'
+ '-y, -x, -z+1/2'
+ '-x+y, y, -z+1/2'
+ 'x, x-y, -z+1/2'
+ '-x, -y, -z'
+ 'y, -x+y, -z'
+ 'x-y, x, -z'
+ 'y, x, z-1/2'
+ 'x-y, -y, z-1/2'
+ '-x, -x+y, z-1/2'
+ 
+_cell_length_a                    8.7483(5)
+_cell_length_b                    8.7483(5)
+_cell_length_c                    8.1925(5)
+_cell_angle_alpha                 90
+_cell_angle_beta                  90
+_cell_angle_gamma                 120
+_cell_volume                      542.99(7)
+_cell_formula_units_Z             2
+
+ 
+loop_
+ _atom_site_label
+ _atom_site_type_symbol
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_U_iso_or_equiv
+
+Pb1 Pb 0.000000 0.000000 0.500000 0.04549(18) 
+I1 I 0.16444(3) 0.32888(7) 0.250000 0.0822(3) 
+N1 N 0.629(7) 0.386(7) 0.214(4) 0.080(8) 
+H1NA H 0.524720 0.379475 0.186234 0.096 
+H1NB H 0.716413 0.499828 0.197372 0.096 
+C1 C 0.624(12) 0.341(15) 0.391(5) 0.078
+H1A H 0.714047 0.444210 0.450463 0.117 
+H1B H 0.648011 0.243353 0.402431 0.117 
+H1C H 0.507322 0.305775 0.436054 0.117 
+C2 C 0.659(14) 0.267(10) 0.105(7) 0.081(10) 
+H2A H 0.550087 0.152740 0.095529 0.121 
+H2B H 0.752663 0.249181 0.150627 0.121 
+H2C H 0.694903 0.320262 -0.004005 0.121 
