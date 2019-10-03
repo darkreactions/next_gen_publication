@@ -12,14 +12,14 @@ import urllib.parse
 
 
 class Figure1:
-    def __init__(self, csv_file_path, base_path=''):
+    def __init__(self, csv_file_path, base_path='', inchi_key='JMXLWMIFDJCGBV-UHFFFAOYSA-N'):
         self.selected_plate = None
         self.old_plate = None
         self.base_path = base_path
         self.full_perovskite_data = pd.read_csv(
             csv_file_path, low_memory=False, skiprows=4)
         self.setup_hull()
-        self.gen_amine_traces()
+        self.gen_amine_traces(inchi_key)
         self.setup_plot()
         self.generate_xrd()
         self.setup_widgets()
@@ -34,7 +34,7 @@ class Figure1:
                                    opacity=0.50,
                                    alphahull=0)
 
-    def gen_amine_traces(self, inchi_key='JMXLWMIFDJCGBV-UHFFFAOYSA-N', amine_short_name='Me2NH2I'):
+    def gen_amine_traces(self, inchi_key, amine_short_name='Me2NH2I'):
         amine_data = self.full_perovskite_data.loc[self.full_perovskite_data['_rxn_organic-inchikey'] == inchi_key]
         # Splitting by crystal scores. Assuming crystal scores from 1-4
         self.amine_crystal_dfs = []
