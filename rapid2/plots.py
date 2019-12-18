@@ -77,6 +77,10 @@ class Figure1:
                 )
             )
             self.amine_crystal_traces.append(trace)
+
+            self.add_projections(i, df)
+
+            # Calculating success hull
             if i == 3:
                 success_points = np.dstack((df['_rxn_M_inorganic'],
                                             df['_rxn_M_organic'],
@@ -108,13 +112,56 @@ class Figure1:
 
         if success_hull:
             xp, yp, zp = zip(*success_points[success_hull.vertices])
+            contour = {'show': True}
             self.success_hull_plot = go.Mesh3d(x=xp,
                                                y=yp,
                                                z=zp,
                                                color='red',
-                                               opacity=0.50,
-                                               alphahull=0)
+                                               opacity=0.15,
+                                               alphahull=0,
+                                               flatshading=True)
             self.data += [self.success_hull_plot]
+
+    def add_projections(self, i, df):
+        plot_options = dict(x=df['_rxn_M_inorganic'],
+                            y=df['_rxn_M_organic'],
+                            z=[0 for i in range(len(df['_rxn_M_acid']))],
+                            mode='markers',
+                            name='Score {}'.format(i+1),
+                            text=["""<b>Inorganic</b>: {:.3f} <br><b>{}</b>: {:.3f}
+                         <br><b>Solvent</b>: {:.3f}""".format(
+                                row['_rxn_M_inorganic'],
+                                self.chem_dict[row['_rxn_organic-inchikey']],
+                                row['_rxn_M_organic'],
+                                row['_rxn_M_acid'])
+            for idx, row in df.iterrows()],
+            hoverinfo='text',
+            marker=dict(
+                symbol='cross',
+                size=3,
+                color=self.trace_colors[i],
+                line=dict(
+                    width=1.0,
+                    color=self.trace_colors[i]
+                ),
+                opacity=1.0
+        ))
+        # Adding x-y projection
+        projections = [go.Scatter3d(plot_options)]
+
+        # Adding y-z projection
+        plot_options['x'] = [0 for i in range(len(df['_rxn_M_inorganic']))]
+        plot_options['y'] = df['_rxn_M_organic']
+        plot_options['z'] = df['_rxn_M_acid']
+        projections.append(go.Scatter3d(plot_options))
+
+        # Adding x-z projection
+        plot_options['x'] = df['_rxn_M_inorganic']
+        plot_options['y'] = [0 for i in range(len(df['_rxn_M_organic']))]
+        plot_options['z'] = df['_rxn_M_acid']
+        projections.append(go.Scatter3d(plot_options))
+
+        self.amine_crystal_traces += projections
 
     def setup_plot(self, xaxis_label='Lead Iodide [PbI3] (M)',
                    yaxis_label='Dimethylammonium Iodide<br>[Me2NH2I] (M)',
