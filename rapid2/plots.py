@@ -13,7 +13,11 @@ import json
 class Figure1:
     def __init__(self, csv_file_path, base_path='.',
                  inchi_key='XFYICZOIWSBQSK-UHFFFAOYSA-N',
-                 clustering=None):
+                 clustering=None,
+                 font_size=12,
+                 projection=False):
+        self.projection = projection
+        self.font_size = font_size
         self.base_path = base_path
         self.clustering = clustering
         self.full_perovskite_data = pd.read_csv(
@@ -78,7 +82,8 @@ class Figure1:
             )
             self.amine_crystal_traces.append(trace)
 
-            self.add_projections(i, df)
+            if self.projection:
+                self.add_projections(i, df)
 
             # Calculating success hull
             if i == 3:
@@ -167,7 +172,11 @@ class Figure1:
                    yaxis_label='Dimethylammonium Iodide<br>[Me2NH2I] (M)',
                    zaxis_label='Formic Acid [FAH] (M)'):
         self.layout = go.Layout(
+            font=dict(
+                size=self.font_size,
+            ),
             scene=dict(
+
                 xaxis=dict(
                     title=xaxis_label,
                     tickmode='linear',
