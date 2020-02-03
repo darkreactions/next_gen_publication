@@ -35,7 +35,9 @@ class Figure1:
             self.full_perovskite_data['_rxn_organic_inchikey']
             == inchi_key]
 
-        print(f'Total points: {len(amine_data)}')
+        success_hull = None
+
+        #print(f'Total points: {len(amine_data)}')
         self.max_inorg = amine_data['_rxn_M_inorganic'].max()
         self.max_org = amine_data['_rxn_M_organic'].max()
         self.max_acid = amine_data['_rxn_M_acid'].max()
@@ -45,7 +47,7 @@ class Figure1:
         for i in range(1, 5):
             self.amine_crystal_dfs.append(
                 amine_data.loc[amine_data['_out_crystalscore'] == i])
-        print(len(self.amine_crystal_dfs[3]))
+        # print(len(self.amine_crystal_dfs[3]))
         self.amine_crystal_traces = []
         self.trace_colors = ['rgba(65, 118, 244, 1.0)',
                              'rgba(92, 244, 65, 1.0)',
@@ -59,8 +61,7 @@ class Figure1:
                 z=df['_rxn_M_acid'],
                 mode='markers',
                 name='Score {}'.format(i+1),
-                text=["""<b>Inorganic</b>: {:.3f} <br><b>{}</b>: {:.3f}
-                         <br><b>Solvent</b>: {:.3f}""".format(
+                text=["""<b>Inorganic</b>: {:.3f} <br><b>{}</b>: {:.3f}<br><b>Solvent</b>: {:.3f}""".format(
                     row['_rxn_M_inorganic'],
                     self.chem_dict[row['_rxn_organic_inchikey']],
                     row['_rxn_M_organic'],
@@ -90,7 +91,6 @@ class Figure1:
                                                  self.clustering.labels_]]
                     ones_hull = ConvexHull(one_labels)
 
-                success_hull = None
                 if len(success_points) > 3:
                     success_hull = ConvexHull(success_points)
 
@@ -165,11 +165,15 @@ class Figure1:
         )
         try:
             with self.fig.batch_update():
+                self.fig.data[-1].x = [0.0]
+                self.fig.data[-1].y = [0.0]
+                self.fig.data[-1].z = [0.0]
                 for i, trace in enumerate(self.data):
                     self.fig.data[i].x = trace.x
                     self.fig.data[i].y = trace.y
                     self.fig.data[i].z = trace.z
                     self.fig.data[i].text = trace.text
+
                 self.fig.layout.update(self.layout)
         except:
             self.fig = go.FigureWidget(data=self.data, layout=self.layout)
